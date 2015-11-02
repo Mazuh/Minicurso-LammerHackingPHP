@@ -17,9 +17,9 @@
             <form class="form-signin" action="script/logar.php" method="post">
                 <h2 class="form-signin-heading">Entre agora!</h2>
                 <label for="inputLoginUsuario" class="sr-only">Usuário</label>
-                <input type="text" id="inputLoginUsuario" class="form-control" placeholder="Usuário" required autofocus>
+                <input name="nick" type="text" id="inputLoginUsuario" class="form-control" placeholder="Usuário" required autofocus>
                 <label for="inputPassword" class="sr-only">Senha</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
 
                 <br/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Acessar</button>
@@ -30,19 +30,20 @@
 
         <div class="col-md-7">
 
-            <form class="form-signin" action="script/logar.php" method="post">
+            <form class="form-signin" action="script/cadastrar.php" method="post">
                 <h2 class="form-signin-heading">Abra uma conta!</h2>
+                
                 <label for="inputEmail" class="sr-only">E-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required>
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="E-mail" required>
                 
                 <label for="inputPassword" class="sr-only">Senha</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <input name="senha1" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
                 
                 <label for="inputRePassword" class="sr-only">Repetir senha</label>
-                <input type="password" id="inputRePassword" class="form-control" placeholder="Repetir senha" required>
+                <input name="senha2" type="password" id="inputRePassword" class="form-control" placeholder="Repetir senha" required>
                 
-                <label for="inputLoginUsuario" class="sr-only">Usuário</label>
-                <input type="text" id="inputUsuario" class="form-control" placeholder="Usuário" required>
+                <label for="inputLoginUsuario" class="sr-only">Nick do usuário</label>
+                <input name="nick" type="text" id="inputUsuario" class="form-control" placeholder="Nick do usuário" required>
 
                 <br/>
                 <button class="btn btn-lg btn-warning btn-block" type="submit">Cadastrar</button>
