@@ -18,7 +18,7 @@ if (isset($_REQUEST["nick"]) && isset($_REQUEST["senha"])){
         $usuario = mysqli_fetch_array($res);
         
         // registra e redireciona
-        $_SESSION["usuario"] = $usuario["id"];
+        $_SESSION["usuario"] = $usuario;
         header("location: ../?t=feed");
         
     } else{

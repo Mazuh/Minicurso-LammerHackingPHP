@@ -1,5 +1,9 @@
-<?
+<?php
 session_start();
+
+$estaLogado = isset($_SESSION["usuario"]);
+$usuario = $estaLogado ? $_SESSION["usuario"] : null;
+
 ?>
 
 <!DOCTYPE html>
@@ -43,23 +47,20 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">The Hackbook</a>
+                    <a class="navbar-brand" href="?feed">The Hackbook<?php if ($estaLogado) echo " - ".$usuario["nick"]; ?></a>
                 </div>
-                <?php
-                    $podePesquisar = isset($_SESSION["usuario"]); // só pode pesquisar se já houver login
-                ?>
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" method="get" action="listagem.php">
                         <div class="form-group">
                             <input type="search" 
                                    placeholder="Buscar hacker" 
                                    class="form-control"
-                                   <?php if (!$podePesquisar) echo " disabled "; ?>
+                                   <?php if (!$estaLogado) echo " disabled "; ?>
                                    required />
                         </div>
                         <button type="submit" 
                                 class="btn btn-success"
-                                <?php if (!$podePesquisar) echo " disabled "; ?>
+                                <?php if (!$estaLogado) echo " disabled "; ?>
                                 >Buscar</button>
                     </form>
                 </div>
