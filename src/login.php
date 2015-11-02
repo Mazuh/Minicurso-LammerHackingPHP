@@ -56,10 +56,16 @@
 
 </div>
 
+<?php
+// se houver flag setada, dispara um alerta.
+if (isset($_REQUEST["ok"])){
+    echo "<script> alert('Cadastro realizado com sucesso.'); </script>";
+}
+?>
 
 <script type="text/javascript">
     // futuro eu, estou morrendo de fome e sono, então me perdoe por fazer uma pequena gambiarra
-
+    
     var pisca = document.getElementById("piscante");
 
     function piscar(){

@@ -19,7 +19,7 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["senha1"]) && isset($_REQUEST["
     $sql = "insert into usuario (nick, email, senha) values ('$nick', '$email', '$senha')";
     
     if(mysqli_query($link, $sql)){
-        header("location: ../index.php?t=login");
+        header("location: ../index.php?t=login&ok=");
     }else{
         die("Erro ao tentar cadastrar.");
     }

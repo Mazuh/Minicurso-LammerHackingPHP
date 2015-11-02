@@ -1,3 +1,7 @@
+<?
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,7 +24,7 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
-            
+
             footer{
                 background-color: lightgray;
             }
@@ -41,12 +45,22 @@
                     </button>
                     <a class="navbar-brand" href="#">The Hackbook</a>
                 </div>
+                <?php
+                    $podePesquisar = isset($_SESSION["usuario"]); // só pode pesquisar se já houver login
+                ?>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
+                    <form class="navbar-form navbar-right" method="get" action="listagem.php">
                         <div class="form-group">
-                            <input type="search" placeholder="Buscar hacker" class="form-control">
+                            <input type="search" 
+                                   placeholder="Buscar hacker" 
+                                   class="form-control"
+                                   <?php if (!$podePesquisar) echo " disabled "; ?>
+                                   required />
                         </div>
-                        <button type="submit" class="btn btn-success">Buscar</button>
+                        <button type="submit" 
+                                class="btn btn-success"
+                                <?php if (!$podePesquisar) echo " disabled "; ?>
+                                >Buscar</button>
                     </form>
                 </div>
             </div>
