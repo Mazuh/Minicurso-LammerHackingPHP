@@ -28,4 +28,4 @@
 
 <h2>The Hackbook</h2>
 <p>É um sistema simplório de blog, muito de longe lembrando alguns sites já existentes, em que usuários podem realizar login, criar suas próprias publicações, escrever comentários e seguir uns aos outros. Foi feito com conhecimentos de Nível Técnico em Informática e possui diversas fraquezas a serem exploradas e cobertas pelos ouvintes do minicurso.</p>
-<p>Está sob a licença <a href="LICENSE.md">MIT License (MIT)</a>, assim como o framework Twitter Bootstrap que o integra.</p>
+<p>Está sob a licença <a href="LICENSE.md">MIT License (MIT)</a>, assim como o framework <a href="https://github.com/twbs/bootstrap">Twitter Bootstrap</a> que o integra.</p>
