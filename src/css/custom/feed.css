@@ -104,3 +104,14 @@ h6, .h6 {
     margin-bottom: 20px;
     color: #999;
 }
+
+/* 
+Custom, by myself
+*/
+#inputTitulo{
+    background-color: lightgray;
+}
+
+#inputConteudo{
+    background-color: lightgray;
+}

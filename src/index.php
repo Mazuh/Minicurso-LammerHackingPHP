@@ -47,7 +47,7 @@ $usuario = $estaLogado ? $_SESSION["usuario"] : null;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="?feed">The Hackbook<?php if ($estaLogado) echo " - ".$usuario["nick"]; ?></a>
+                    <a class="navbar-brand" href="<?php echo $estaLogado? '?t=feed' : ''; ?>">The Hackbook<?php if ($estaLogado) echo " - ".$usuario["nick"]; ?></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" method="get" action="listagem.php">
