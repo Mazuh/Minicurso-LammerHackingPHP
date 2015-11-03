@@ -81,7 +81,7 @@ $perfil = mysqli_fetch_array($res);
                 <h1><?php echo $postagem["titulo"]; ?></h1>
                 <p class="blog-post-meta">Publicado por <a href="./?t=perfil&nome=<?php echo $nomeAutor; ?>"><?php echo $nomeAutor; ?></a>
                     | <?php echo $postagem["datahora"]; ?> <br/>
-                    Recebeu <a href="#"><?php echo $qtdComentarios; ?> comentário(s)</a></p>
+                    Recebeu <a href="./?t=post&id=<?php echo $postagem["id"]; ?>"><?php echo $qtdComentarios; ?> comentário(s)</a></p>
 
                 <div class="conteudo">
                     <?php echo $postagem["conteudo"]; ?>
