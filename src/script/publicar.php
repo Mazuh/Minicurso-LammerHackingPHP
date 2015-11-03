@@ -13,7 +13,7 @@ if (isset($_REQUEST["titulo"]) && isset($_REQUEST["conteudo"]) && isset($_SESSIO
     
     // insert
     $sql = "insert into postagem (titulo, conteudo, autor) values ('$titulo', '$conteudo', $usuario)";
-    echo $sql;
+    
     if (mysqli_query($link, $sql)){
         header("location: ../?t=feed&ok=");
         

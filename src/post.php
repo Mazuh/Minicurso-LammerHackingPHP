@@ -28,40 +28,41 @@ $nomeAutor = mysqli_fetch_array(mysqli_query($link, $sql))["nick"];
 
         <h1>Comente o que <?php echo $nomeAutor; ?> escreveu!</h1>
         <form action="script/comentar.php" method="post">
+            <input type="hidden" name="postagem" value="<?php echo $postagem["id"]; ?>"/>
             <textarea required class="form-control" id="inputConteudo" placeholder="Escreva o comentário" name="conteudo"></textarea>
             <button type="submit" class="form-control btn btn-primary">Comentar!</button>
         </form> 
 
         <br/>
         <h1 class="blog-post-title">Comentários da publicação "<?php echo $postagem["titulo"]; ?>"</h1><br/></br>
-        <?php
+    <?php
 
-        $usuario = $_SESSION["usuario"];
+    $usuario = $_SESSION["usuario"];
 
-        $sql = "select * from comentario where postagem=".$_REQUEST["id"];
-        $res = mysqli_query($link, $sql);
-        
-        // listagem de comentários
-        while ($comentario = mysqli_fetch_array($res)){
-        
-            // verifica nome do autor do comentário
-            $sql = "select * from usuario where id = ".$comentario["autor"];
-            $nomeAutorComentario = mysqli_fetch_array(mysqli_query($link, $sql))["nick"];
+    $sql = "select * from comentario where postagem=".$_REQUEST["id"];
+    $res = mysqli_query($link, $sql);
 
-        ?>
-        <div class="blog-post">
-            <p class="lead blog-description">Por: <?php echo $nomeAutorComentario; ?> | Em: <?php echo $comentario["datahora"]; ?></p>
-            <div><?php echo $comentario["conteudo"]; ?></div>
-        </div>
-        <?php
-        }
-        ?>
+    // listagem de comentários
+    while ($comentario = mysqli_fetch_array($res)){
 
-    </div><!-- /.blog-main -->
+        // verifica nome do autor do comentário
+        $sql = "select * from usuario where id = ".$comentario["autor"];
+        $nomeAutorComentario = mysqli_fetch_array(mysqli_query($link, $sql))["nick"];
 
-</div><!-- /.row -->
+    ?>
+    <div class="blog-post">
+        <p class="lead blog-description">Por: <?php echo $nomeAutorComentario; ?> | Em: <?php echo $comentario["datahora"]; ?></p>
+        <div><?php echo $comentario["conteudo"]; ?></div>
+    </div>
+    <?php
+    }
+    ?>
+
+</div><!-- /.blog-header -->
 
 </div><!-- /.container -->
-
-
+<?php
+if (isset($_REQUEST["ok"])){
+    echo "<script> alert('Comentado com sucesso.'); </script>";
+}
 ?>
