@@ -18,13 +18,16 @@ create table seguimento(
 
 create table postagem(
     id int primary key auto_increment,
+    autor int not null references usuario(id),
     titulo varchar(50) not null,
-    conteudo text not null
+    conteudo text not null,
+    datahora timestamp
 );
 
 create table comentario(
     id int primary key auto_increment,
     postagem int not null references postagem(id),
     autor int not null references usuario(id),
-    conteudo text not null
+    conteudo text not null,
+    datahora timestamp
 );
