@@ -86,6 +86,8 @@
 
 if (isset($_REQUEST["ok"])){
     echo "<script> alert('Publicado com sucesso.'); </script>";
+} else if(isset($_REQUEST["erro"])){
+    echo "<script> alert('Não encontrado.'); </script>";    
 }
 
 ?>
