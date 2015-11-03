@@ -25,33 +25,40 @@ $perfil = mysqli_fetch_array($res);
     <div class="blog-header">
 
         <h1 class="blog-title"><?php echo $perfil["nick"]; ?>_</h1>
-        
+
         <p class="lead blog-description">
             <?php
+            // SEGUIDORES
             //$sql = "select * from seguimento where seguido=".$perfil["id"]; // ineficiente
             $sql = "select seguimento.*, usuario.* from seguimento inner join usuario on usuario.id = seguimento.seguidor where seguimento.seguido = ".$perfil["id"];
             $res = mysqli_query($link, $sql);
-            
+
             echo "<strong>Seguidores (".mysqli_num_rows($res)."):  </strong>";
-            
+
             while ($seguidor = mysqli_fetch_array($res)){
                 echo $seguidor["nick"]." | ";
             }
             ?>
         </p>
-        
+
         <p class="lead blog-description">
             <?php
+            // SEGUINDO
             //$sql = "select * from seguimento where seguidor=".$perfil["id"]; // ineficiente
             $sql = "select seguimento.*, usuario.* from seguimento inner join usuario on usuario.id = seguimento.seguido where seguimento.seguidor = ".$perfil["id"];
             $res = mysqli_query($link, $sql);
-            
+
             echo "<strong>Seguindo (".mysqli_num_rows($res)."):  </strong>";
-            
+
             while ($seguido = mysqli_fetch_array($res)){
                 echo $seguido["nick"]." | ";
             }
+            
+            // SEGUIR TAMBÉM
             ?>
+            <br/>
+            <br/>
+            <a class="form-control btn btn-success" href="script/seguir.php?id=<?php echo $perfil['id']; ?>">SEGUIR</a>
         </p>
 
     </div>

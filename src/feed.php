@@ -11,7 +11,7 @@
 
         <br/>
         <h1 class="blog-post-title">Feed de notícias_</h1>
-        <p class="lead blog-description">Estas são as 5 publicações mais recentes de seus seguidores.</p>
+        <p class="lead blog-description">Estas são as 5 publicações mais recentes de seus seguidos.</p>
 
     </div>
 
